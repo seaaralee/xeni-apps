@@ -12,7 +12,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import InputSearch from "../components/inputSearch";
-import ListWord from "../components/listWord";
+import ListWord from "../components/word";
 
 export default function DashboardScreen({ navigation }) {
   const colorScheme = useColorScheme();

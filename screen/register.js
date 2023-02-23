@@ -31,7 +31,7 @@ export default function RegisterScreen ({navigation}) {
             </View>
 
             {/* sign in */}
-            <ButtonAuth nav={() => navigation.navigate('Dashboard')} txt="Sign Up"/>
+            <ButtonAuth nav={() => navigation.navigate('Home')} txt="Sign Up"/>
 
             {/* atau */}
             <View style={{marginTop: 24, opacity: 0.4}}>

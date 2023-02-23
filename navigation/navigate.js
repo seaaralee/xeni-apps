@@ -7,6 +7,9 @@ import DashboardScreen from "../screen/dashboard";
 import QuizScreen from "../screen/quiz";
 import SavedScreen from "../screen/saved";
 import ProfileScreen from "../screen/profile";
+import QuizEasyScreen from "../screen/quiz/quiz.easy"
+import QuizMediumScreen from "../screen/quiz/quiz.medium"
+import QuizHardScreen from "../screen/quiz/quiz.hard"
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -33,7 +36,24 @@ export default function Nav() {
           options={{ headerShown: false }}
         />
         <Stack.Screen
-          name="Dashboard"
+          name="QuizEasy"
+          component={QuizEasyScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="QuizMedium"
+          component={QuizMediumScreen}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="QuizHard"
+          component={QuizHardScreen}
+          options={{ headerShown: false }}
+        />
+
+        {/* Navbottom */}
+        <Stack.Screen
+          name="Home"
           component={TabB}
           options={{ headerShown: false }}
         />

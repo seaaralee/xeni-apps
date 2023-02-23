@@ -30,7 +30,7 @@ export default function LoginScreen ({navigation}) {
             </View>
 
             {/* sign in */}
-            <ButtonAuth nav={() => navigation.navigate('Dashboard')} txt="Sign In"/>
+            <ButtonAuth nav={() => navigation.navigate('Home')} txt="Sign In"/>
 
             {/* atau */}
             <View style={{marginTop: 24, opacity: 0.4}}>

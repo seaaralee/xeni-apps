@@ -14,7 +14,7 @@ export default function OnBoardingScreen({ navigation }) {
   const colorScheme = useColorScheme();
 
   const themeContainerStyle =
-    colorScheme === "light" ? styles.lightContainer : darkContainer;
+    colorScheme === "light" ? styles.lightContainer : styles.darkContainer;
 
   return (
     <View style={[styles.container, themeContainerStyle]}>
