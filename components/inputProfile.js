@@ -1,17 +1,17 @@
 import React from "react";
 import { TextInput, View, StyleSheet } from "react-native";
-import { Octicons, Feather } from "@expo/vector-icons";
+import { Octicons, Fontisto } from "@expo/vector-icons";
 
-export default function InputText(props) {
+export default function InputProfile(props) {
   return (
     <View style={styles.container}>
-      <View style={styles.inputText}>
+      <View style={styles.label}>
         {/* Icon */}
         <Octicons name={props.name} size={18} color="#141E614D" />
-        <Feather name={props.icn} size={18} color="#141E614D" />
+        <Fontisto name={props.namei} size={18} color="#141E614D" />
         {/* Input field */}
         <TextInput
-          style={styles.txt}
+          style={styles.input}
           placeholder={props.plch}
           placeholderTextColor="#141E614D"
         />
@@ -23,24 +23,25 @@ export default function InputText(props) {
 const styles = StyleSheet.create({
   container: {
     marginTop: 20,
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
     flexDirection: "row",
-    width: "95%",
+    width: "100%",
+    height: 50
   },
-  inputText: {
+  label: {
     padding: 10,
     flexDirection: "row",
-    width: "95%",
-    backgroundColor: "#FFFF",
-    borderBottomColor: "#B8B8D2",
-    borderBottomWidth: 0.5,
+    width: "100%",
+    borderWidth: 1,
+    borderColor: "#B8B8D2",
+    borderRadius: 8,
     alignItems: "center",
   },
-  txt: {
+  input: {
     fontSize: 12,
     fontWeight: "400",
     marginLeft: 10,
-    width: "90%",
+    width: "100%",
   },
 });

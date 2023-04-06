@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import {
   View,
   useColorScheme,
@@ -9,6 +9,7 @@ import {
   Text,
   Platform,
   StatusBar,
+  TouchableWithoutFeedback
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import InputSearch from "../components/inputSearch";
@@ -20,38 +21,33 @@ export default function DashboardScreen({ navigation }) {
   const themeContainerStyle =
     colorScheme === "light" ? styles.lightContainer : darkContainer;
 
+  const [state, setState] = useState({
+    search: "",
+  });
 
-    const [state, setState] = useState({
-      search: '',
-    });
-  
-    filterList = (list) => {
-      return list.filter(
-        (listItem) =>
-          listItem.word
-            .toLowerCase()
-            .includes(state.search.toLowerCase())
-      )
-    }
-  
-    const list = [
-      {word:'abatoar'},
-      {word:'abdikasi'},
-      {word:'abdomen'},
-      {word:'aberasi'},
-      {word:'abiosfer'},
-      {word:'abiogenesis'},
-      {word:'abiturien'},
-      {word:'ablasi'},
-      {word:'ablaut'},
-      {word:'abnormal'},
-      {word:'abnormalitas'},
-      {word:'abolisi'},
-      {word:'abonemen'},
-      {word:'absen'},
-      
-    ];
-  
+  filterList = (list) => {
+    return list.filter((listItem) =>
+      listItem.word.toLowerCase().includes(state.search.toLowerCase())
+    );
+  };
+
+  const list = [
+    { word: "abatoar" },
+    { word: "abdikasi" },
+    { word: "abdomen" },
+    { word: "aberasi" },
+    { word: "abiosfer" },
+    { word: "abiogenesis" },
+    { word: "abiturien" },
+    { word: "ablasi" },
+    { word: "ablaut" },
+    { word: "abnormal" },
+    { word: "abnormalitas" },
+    { word: "abolisi" },
+    { word: "abonemen" },
+    { word: "absen" },
+  ];
+
   return (
     <View style={[styles.container, themeContainerStyle]}>
       <SafeAreaView style={styles.AndroidSafeArea}>
@@ -68,10 +64,13 @@ export default function DashboardScreen({ navigation }) {
             {/* top */}
             <View style={{ flexDirection: "row" }}>
               {/* profile */}
-              <Image
-                style={{ justifyContent: "flex-start" }}
-                source={require("../assets/profile.png")}
-              />
+              <TouchableWithoutFeedback onPress={() => navigation.navigate("Profile")}>
+                <Image
+                  style={{ justifyContent: "flex-start" }}
+                  source={require("../assets/profile.png")}
+                />
+              </TouchableWithoutFeedback>
+
 
               {/* name */}
               <View
@@ -81,7 +80,9 @@ export default function DashboardScreen({ navigation }) {
                   marginTop: 3,
                 }}
               >
-                <Text style={styles.txtName}>Hello Nasywa,</Text>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate("Profile")}>
+                  <Text style={styles.txtName}>Hello Nasywa,</Text>
+                </TouchableWithoutFeedback>
                 <Text style={styles.txtDesc}>
                   Welcome, let's find your best words
                 </Text>
@@ -101,18 +102,18 @@ export default function DashboardScreen({ navigation }) {
 
           {/* search */}
           <View>
-            <InputSearch onChangeText={(search) => setState({search})}/>
+            <InputSearch onChangeText={(search) => setState({ search })} />
           </View>
 
           {/* scrolling */}
           <ScrollView
-            style={{ marginTop: 25, height: "84%", width: "100%" }}
+            style={{ marginTop: 25, height: "81%", width: "100%" }}
             contentContainerStyle={{ paddingBottom: 30 }}
             showsVerticalScrollIndicator={false}
           >
             {filterList(list).map((listItem, index) => (
-                  <ListWord key={index} word={listItem.word} />
-            ))}                         
+              <ListWord key={index} word={listItem.word} />
+            ))}
           </ScrollView>
         </View>
       </SafeAreaView>

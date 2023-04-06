@@ -9,6 +9,7 @@ import {
   StatusBar,
 } from "react-native";
 import { Ionicons, Entypo } from '@expo/vector-icons';
+import CardQuiz from "../../components/cardQuiz";
 
 export default function QuizHardScreen({ navigation }) {
   const colorScheme = useColorScheme();
@@ -24,6 +25,11 @@ export default function QuizHardScreen({ navigation }) {
         <Ionicons name="arrow-back" size={22} color="#755F86" onPress={() => navigation.navigate("Home")}/>
           <Text style={styles.txtTitle}> Hard </Text>
           <Entypo name="help-with-circle" size={22} color="#755F86" />
+        </View>
+        <View style={{ margin: 20 }}>
+          <CardQuiz
+            navigate={() => navigation.navigate("QuizHardDetail")}
+            number="1" rating="5.0" soal=" 05/05" level=" Hard" />
         </View>
       </SafeAreaView>
     </View>

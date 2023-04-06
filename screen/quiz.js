@@ -11,7 +11,6 @@ import {
 } from "react-native";
 import IconPage from "../components/level";
 
-
 export default function QuizScreen({ navigation }) {
   const colorScheme = useColorScheme();
 
@@ -26,16 +25,16 @@ export default function QuizScreen({ navigation }) {
             margin: 24,
           }}
         >
-            <Text
-              style={{
-                textAlign: "center",
-                color: "#755F86",
-                fontSize: 18,
-                fontWeight: "500",
-              }}
-            >
-              Xerapan Quiz
-            </Text>
+          <Text
+            style={{
+              textAlign: "center",
+              color: "#755F86",
+              fontSize: 18,
+              fontWeight: "500",
+            }}
+          >
+            Xerapan Quiz
+          </Text>
           <View style={{ alignItems: "center", marginTop: 49 }}>
             <Image source={require("../assets/quiz.png")} />
           </View>
@@ -61,8 +60,7 @@ export default function QuizScreen({ navigation }) {
           </View>
           <View style={{ marginTop: 32 }}>
             <Text style={{ color: "#755F86", fontSize: 18, fontWeight: "500" }}>
-              {" "}
-              Quiz History{" "}
+              Recent Quiz
             </Text>
           </View>
           <View
